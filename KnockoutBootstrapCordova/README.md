@@ -1,0 +1,1 @@
+Salesforce Mobile SDK 2.0 + KnockoutJS + Twitter Bootstrap based Contacts boilerplate app
