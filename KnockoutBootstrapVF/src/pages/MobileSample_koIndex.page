@@ -12,8 +12,8 @@
             text-align: center;
         }
     </style>
-    <link href="http://localhost:3000/css/bootstrap.min.css" rel="stylesheet" />
-    <link href="http://localhost:3000/css/bootstrap-responsive.min.css" rel="stylesheet" />
+    <link href="https://netdna.bootstrapcdn.com/twitter-bootstrap/2.3.1/css/bootstrap.css" rel="stylesheet" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
 </head>
 <body>
 <div class="navbar navbar-inverse navbar-fixed-top">
@@ -39,27 +39,6 @@
     configFromEnv.sessionId = "{!$API.session_Id}";
 </script>
 
- <script src="http://localhost:3000/js/entity/jquery-2.0.0.min.js"></script>
-<!--
-<script src="http://localhost:3000/js/entity/underscore-1.4.4.min.js"></script>
-<script src="http://localhost:3000/js/entity/forcetk.js"></script>
-<script src="http://localhost:3000/js/entity/force.entity.js"></script>
-
-
-<script src="http://localhost:3000/js/cordova/MockCordova.js"></script>
-<script src="http://localhost:3000/js/cordova/MockSmartStore.js"></script>
-<script src="http://localhost:3000/js/cordova/cordova.force.js"></script>
-
-
-
-<script src="http://localhost:3000/js/knockout-2.2.1.js"></script>
-<script src="http://localhost:3000/js/sammy-latest.min.js"></script>
-
-<script src="http://localhost:3000/js/knockout-force.js"></script>
-<script src="http://localhost:3000/js/forcetk.ui.js"></script>
-<script src="http://localhost:3000/js/init.js"></script>
-<script src="http://localhost:3000/js/app.js"></script>
--->
 <script src="{!URLFOR($Resource.MobileSample_Resources_Knockout, 'resources/js/entity/underscore-1.4.4.min.js')}"></script>
 <script src="{!URLFOR($Resource.MobileSample_Resources_Knockout, 'resources/js/entity/forcetk.js')}"></script>
 <script src="{!URLFOR($Resource.MobileSample_Resources_Knockout, 'resources/js/entity/force.entity.js')}"></script>
