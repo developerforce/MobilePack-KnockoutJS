@@ -49,112 +49,22 @@ mockStore.useSessionStorage();
  * @param koApp KnockoutJS app
  * @returns {*} a Sammy object
  */
-// function sammyRoutes(koApp) {
-//     //Note: SammyJS needs absolute path (for cordova). 
-//     var absolutePath = document.location.href.substr(0, document.location.href.lastIndexOf('/'));
-
-//     var sammyApp = Sammy(function () {
-//         this.get('/', function () {
-//             if (!koApp.knockoutForce.authenticated()) {
-//                 this.app.runRoute('get', '/login'); //redirect to login
-//             } else {
-//                 this.render('/partials/home.html').replace('#mainContainer');
-//                 koApp.setViewModelByRoute("/");
-//             }
-//         });
-
-//         this.get('/login', function () {
-//             this.render('/partials/login.html').replace('#mainContainer');
-//             koApp.setViewModelByRoute("/login");
-//         });
-
-
-//         this.get('/callback:cbInfo', function () {
-//             koApp.knockoutForce.oauthCallback(document.location.href);
-//             location.hash = '/contacts';
-//         });
-
-//         this.get('/contacts', function () {
-//             if (!koApp.knockoutForce.authenticated()) {
-//                 location.hash = '/login';
-//             } else {
-//                 koApp.setViewModelByRoute("/contacts");
-//                 this.render('/partials/contact/list.html').replace('#mainContainer');
-//             }
-//         });
-
-//         this.get('/view/:id', function () {
-//             if (!koApp.knockoutForce.authenticated()) {
-//                 location.hash = '/login';
-//             } else {
-//                 koApp.setViewModelByRoute("/view", {id: this.params.id});
-//                 this.render('/partials/contact/view.html').replace('#mainContainer');
-//             }
-//         });
-
-//         this.get('/edit/:id', function () {
-//             if (!koApp.knockoutForce.authenticated()) {
-//                 location.hash = '/login';
-//             } else {
-//                 koApp.setViewModelByRoute("/edit", {id: this.params.id});
-//                 this.render('/partials/contact/edit.html').replace('#mainContainer');
-//             }
-//         });
-
-//         this.get('/new', function () {
-//             if (!koApp.knockoutForce.authenticated()) {
-//                 location.hash = '/login';
-//             } else {
-//                 koApp.setViewModelByRoute("/edit", {});
-//                 this.render('/partials/contact/edit.html').replace('#mainContainer');
-//             }
-//         });
-
-//         this.get('/logout', function () {
-//             this.render('/partials/logout.html').replace('#mainContainer');
-//         });
-
-//         //Note: bind to 'changed' event and reapply bindings if mainContainer has changed
-//         //This is required to essentially wait until new view is swapped before applying bindings.
-//         this.bind('changed', function () {
-//             if (!koApp.currentViewModel) {
-//                 return;
-//             }
-//             //var mainContainer = document.getElementById('mainContainer');
-//             var mainContainer = document.getElementsByTagName('body')[0];
-//             ko.cleanNode(document.getElementById('logoutDiv'));
-//             if (mainContainer && mainContainer.childNodes.length > 0) {
-
-//                 ko.applyBindings(koApp.currentViewModel, mainContainer);
-//             }
-//         });
-//     });
-
-//     sammyApp.debug = true;
-//     return sammyApp;
-// }
-
 function sammyRoutes(koApp) {
     //Note: SammyJS needs absolute path (for cordova). 
     var absolutePath = document.location.href.substr(0, document.location.href.lastIndexOf('/'));
 
     var sammyApp = Sammy(function () {
-        this.get('/', showLoginPage);
-        this.get('/apex/MobileSample_koIndex', showLoginPage);
-        function showLoginPage() {
-            debugger;
+        this.get('/', function () {
             if (!koApp.knockoutForce.authenticated()) {
                 this.app.runRoute('get', '/login'); //redirect to login
             } else {
-                debugger;
-                this.render(absolutePath + '/partials/MobileSample_koIndex').replace('#mainContainer');
+                this.render('/partials/home.html').replace('#mainContainer');
                 koApp.setViewModelByRoute("/");
             }
-        }
-
+        });
 
         this.get('/login', function () {
-            this.render(absolutePath + '/partials/MobileSample_koLogin').replace('#mainContainer');
+            this.render('/partials/login.html').replace('#mainContainer');
             koApp.setViewModelByRoute("/login");
         });
 
@@ -169,7 +79,7 @@ function sammyRoutes(koApp) {
                 location.hash = '/login';
             } else {
                 koApp.setViewModelByRoute("/contacts");
-                this.render(absolutePath + '/partials/contact/MobileSample_koContactList').replace('#mainContainer');
+                this.render('/partials/contact/list.html').replace('#mainContainer');
             }
         });
 
@@ -178,7 +88,7 @@ function sammyRoutes(koApp) {
                 location.hash = '/login';
             } else {
                 koApp.setViewModelByRoute("/view", {id: this.params.id});
-                this.render(absolutePath + '/partials/contact/MobileSample_koContactView').replace('#mainContainer');
+                this.render('/partials/contact/view.html').replace('#mainContainer');
             }
         });
 
@@ -187,7 +97,7 @@ function sammyRoutes(koApp) {
                 location.hash = '/login';
             } else {
                 koApp.setViewModelByRoute("/edit", {id: this.params.id});
-                this.render(absolutePath + '/partials/contact/MobileSample_koContactEdit').replace('#mainContainer');
+                this.render('/partials/contact/edit.html').replace('#mainContainer');
             }
         });
 
@@ -196,12 +106,12 @@ function sammyRoutes(koApp) {
                 location.hash = '/login';
             } else {
                 koApp.setViewModelByRoute("/edit", {});
-                this.render(absolutePath + '/partials/contact/MobileSample_koContactEdit').replace('#mainContainer');
+                this.render('/partials/contact/edit.html').replace('#mainContainer');
             }
         });
 
         this.get('/logout', function () {
-            this.render(absolutePath + '/partials/logout.html').replace('#mainContainer');
+            this.render('/partials/logout.html').replace('#mainContainer');
         });
 
         //Note: bind to 'changed' event and reapply bindings if mainContainer has changed
@@ -223,6 +133,8 @@ function sammyRoutes(koApp) {
     sammyApp.debug = true;
     return sammyApp;
 }
+
+
 
 /**
  * Please configure Salesforce consumerkey, proxyUrl etc in getSFConfig().
