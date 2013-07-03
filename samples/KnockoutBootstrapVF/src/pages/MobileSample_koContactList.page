@@ -1,0 +1,66 @@
+<apex:page showHeader="false" sidebar="false" standardStylesheets="false">
+<div>
+    <!-- This div is only displayed in desktops (see below for mobile phones)-->
+    <div class="hidden-phone">
+        <div style="float: left">
+            <div style="margin-bottom: 10px;">
+                <input type="text" data-bind="value:searchTerm" class="search-query" placeholder="Search" />
+
+                <p class="btn btn-primary" data-bind="click:doSearch">Go</p>
+            </div>
+        </div>
+
+        <div style="float: right">
+            <a href="#/new" class="btn btn-primary">New</a>
+        </div>
+
+
+        <table width="80%" class="table">
+            <thead>
+            <tr>
+                <th class='hidden-phone'>Id</th>
+                <th>Full Name</th>
+                <th>Company</th>
+                <th>Title</th>
+                <th>Phone</th>
+                <th>Email</th>
+            </tr>
+            </thead>
+            <tbody data-bind="foreach: contacts">
+
+            <tr data-bind="click:$parent.doView">
+                <td data-bind="text:Id"></td>
+                <td><a data-bind="attr: {href:viewUri}, text:FullName"></a></td>
+                <td data-bind="text:Company"></td>
+                <td data-bind="text:Title"></td>
+                <td data-bind="text:Phone"></td>
+                <td data-bind="text:Email"></td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <!-- This div is only displayed in mobile phones (see above for desktops) -->
+    <div class="visible-phone">
+        <form class="form-inline">
+            <input type="text" ng-model="searchTerm" class="input-medium search-query" placeholder="Search" />
+            <button data-bind="click:doSearch" class="btn btn-primary">Go</button>
+            <a href="#/new" class="btn btn-primary">&nbsp;+&nbsp;</a>
+        </form>
+
+        <table class="table">
+            <tbody data-bind="foreach: contacts">
+            <tr data-bind="click:$parent.doView">
+                <td>
+                    <span data-bind="text:FullName"></span>
+                    <br/>
+                    <small><i data-bind="text:Company"></i></small>
+                </td>
+                <td><i class="icon-chevron-right"></i></td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+
+</div>
+</apex:page>

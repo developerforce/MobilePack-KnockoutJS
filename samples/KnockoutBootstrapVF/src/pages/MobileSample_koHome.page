@@ -1,0 +1,31 @@
+<apex:page showHeader="false" sidebar="false" standardStylesheets="false">
+<h2>Home</h2>
+
+<p>You are authenticated!</p>
+<p><a href="#/contacts">Contacts</a></p>
+<p>
+    <button class="btn " ng-click="logout()">Secure Logout</button>
+</p>
+
+<div>
+    <p>This is a Mobile Pack Demo. <a href="https://github.com/rajaraodv/SFAngularBootStrap">Learn more</a>.</p>
+
+    <p>Built with <a href="http://angularjs.org">AngularJS</a> and <a href="http://twitter.github.com/bootstrap">Twitter
+        Bootstrap</a>.
+    </p>
+
+    <p>Designed for use with your <a
+            href="http://www.developerforce.com/events/regular/registration.php?d=70130000000EjHb">Salesforce
+        Developer Edition</a>.</p>
+
+    <p>Built by <a href="http://twitter.com/rajaraodv">Raja Rao DV</a></p>
+</div>
+
+
+
+
+
+
+
+
+</apex:page>

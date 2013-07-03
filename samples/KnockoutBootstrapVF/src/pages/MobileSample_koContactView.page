@@ -1,0 +1,18 @@
+<apex:page showHeader="false" sidebar="false" standardStylesheets="false">
+<div class="span4 well" data-bind="with:contact">
+    <p><strong data-bind="text:FirstName()"></strong> <strong data-bind="text:LastName()"></strong></p>
+
+    <p data-bind="text:Title()"></p>
+
+    <p>Company: <span data-bind="text:getAccount()"></span></p>
+
+    <p>Email: <a data-bind="text:Email, attr:{href:'mailto:' + Email()}"></a></p>
+
+    <p>Phone: <a data-bind="text:Phone(), attr:{href: 'tel:' + Phone()}"></a></p>
+
+    <p>
+        <a class="btn" data-bind="attr:{href: '#/edit/' + Id}">Edit</a>
+        <a class="btn btn-primary" href="#/contacts">Back to Contacts</a>
+    </p>
+</div>
+</apex:page>

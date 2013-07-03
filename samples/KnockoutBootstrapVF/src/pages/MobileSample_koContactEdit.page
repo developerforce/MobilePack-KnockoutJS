@@ -1,0 +1,40 @@
+<apex:page showHeader="false" sidebar="false" standardStylesheets="false">
+<form class="well" name="myForm">
+
+    <div class="control-group" data-bind="with:contact">
+        <label>First Name</label>
+        <input type="text" name="FirstName" data-bind="value:FirstName, valueUpdate:'afterkeydown'"/>
+
+        <label>Last Name</label>
+        <input type="text" name="LastName" data-bind="value:LastName, valueUpdate:'afterkeydown'" required="true"/>
+        <span data-bind="visible:!LastName()" class="help-inline">
+        Required</span>
+
+        <label>Title</label>
+        <input type="text" name="Title" data-bind="value:Title, valueUpdate:'afterkeydown'"/>
+
+        <label>Email</label>
+        <input type="text" name="Email" data-bind="value:Email, valueUpdate:'afterkeydown'"/>
+
+
+        <label>Phone</label>
+        <input type="text" name="Phone" data-bind="value:Phone, valueUpdate:'afterkeydown'"/>
+
+
+        <input disabled="disabled" type="hidden" name="Id" data-bind="value:Id"/>
+
+        <p style='text-align: center;padding-bottom: 30px;padding-top: 40px;'>
+            <button data-bind="click:$parent.save, enable:isValid()"
+                    class="btn btn-primary">Save
+            </button>
+            <button data-bind="visible:Id, click:$parent.destroy"
+                    class="btn btn-danger">Delete
+            </button>
+            <a class="btn btn-primary" href="#/contacts">Cancel</a>
+        </p>
+    </div>
+
+</form>
+
+
+</apex:page>
