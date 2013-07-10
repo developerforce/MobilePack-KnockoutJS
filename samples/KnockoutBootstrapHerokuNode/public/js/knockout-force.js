@@ -20,7 +20,12 @@
 function KnockoutForce(SFConfig) {
     this.inVisualforce = document.location.href.indexOf('visual.force.com') > 0;
 
+
     this.authenticated = function() {
+        //by the time we call this in cordova app is already authenticated
+        if (this.inVisualforce || (location.protocol === 'file:' && cordova)) {
+            return true;
+        }
         return SFConfig.client ? true : false;
     };
 
@@ -213,7 +218,8 @@ function KnockoutForceObjectFactory(params, sfConfig) {
      */
 
     function KnockoutForceObject(props) {
-
+        props = props || {};
+        
         copyToMe(props, this);
 
         this._orig = props || {};
