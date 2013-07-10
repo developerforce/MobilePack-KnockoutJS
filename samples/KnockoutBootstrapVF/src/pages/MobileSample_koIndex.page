@@ -20,11 +20,7 @@
     <div class="navbar-inner">
         <div class="container">
             <a class="brand" href="#">Salesforce Contacts</a>
-            <div id='logoutDiv' data-bind="visible:isAuthenticated()" class="btn-group pull-right">
-                <button
-                        class="btn btn-small" data-bind="click:logout">Logout
-                </button>
-            </div>
+
         </div>
     </div>
 </div>
@@ -57,6 +53,7 @@
 <script src="{!URLFOR($Resource.MobileSample_Resources_Knockout, 'resources/js/forcetk.ui.js')}"></script>
 <script src="{!URLFOR($Resource.MobileSample_Resources_Knockout, 'resources/js/init.js')}"></script>
 <script src="{!URLFOR($Resource.MobileSample_Resources_Knockout, 'resources/js/app.js')}"></script>
+
 </body>
 </html>
 
