@@ -20,12 +20,11 @@ Mobile Pack for KnockoutJS supports the following three deployment options for y
 ## What’s included in this Mobile Pack
 
 
-<p align='center'>
-  <img src="http://res.cloudinary.com/hy4kyit2a/image/upload/w_300,c_limit/v1365305806/i6go8y3vzautscbv7frz.png"/>  
-  <img src="http://res.cloudinary.com/hy4kyit2a/image/upload/w_300,c_limit/v1365305743/vbtheqtiecckcyytcxii.png"/>  
-  <img src="http://res.cloudinary.com/hy4kyit2a/image/upload/w_300,c_limit/v1365305677/jjfrntoi3k2m6wditcfx.png"/>  
-  <img src="http://res.cloudinary.com/hy4kyit2a/image/upload/w_300,c_limit/v1365305703/juwtk1wywhb2n6dlifwd.png"/>
-</p>
+
+![screen shot](images/heroku_login.png)
+![screen shot](images/heroku_listView.png)
+![screen shot](images/heroku_editView.png)
+![screen shot](images/heroku_detailsView.png)
 
 
 * `knockout-force.js` - a plugin library that acts like a glue between KnockoutJS and Salesforce SDK 2.0 library.
