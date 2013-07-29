@@ -1,15 +1,21 @@
-<h1>ForceTK + Knockout + Bootstrap + Visualforce</h1>
+<h1>SmartSync + Knockout + Bootstrap + Visualforce</h1>
+![screen shot](images/KnockoutApp.png)
+
 This sample application uses the ForceTK, Knockout_force and Visualforce. Knockout_force act as a linkage between ForceTk, the javascript library for accessing the Force.com database, and Knockout.js.
 
 
 <h2>Installation</h2>
-The application can be stalled via [unmanaged package](https://login.salesforce.com/packaging/installPackage.apexp?p0=04ti0000000VczI). You must have a Developer Edition to install the package. After clicking on the link, you will see this screen. Use your Developer Edition login credentials.
+The application can be stalled via [unmanaged package](https://login.salesforce.com/packaging/installPackage.apexp?p0=04ti0000000Vrcj). You must have a Developer Edition to install the package. After clicking on the link, you will see this screen. Use your Developer Edition login credentials.
 
 ![screen shot](images/loginScreen.png)
 
 Once installed, there is nothing else you need to do to view the app in your browser!  The package adds a new application to the Application Menu called Knockout Mobile Pack and a new tab called Knockout Contacts. Simply click the Knockout Contacts tab to view the app.
 
-![screen shot](images/KnockoutApp.png)
+
+![screen shot](images/ko_vf_list.png)
+![screen shot](images/ko_vf_detail.png)
+![screen shot](images/ko_vf_edit.png)
+
 
 #### Metadata
 The raw metadata is also included if you want to install into your developer edition using the [Force.com IDE](http://wiki.developerforce.com/page/Force.com_IDE) or [MavensMate](https://github.com/joeferraro/MavensMate).
