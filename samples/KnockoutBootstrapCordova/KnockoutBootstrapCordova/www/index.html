@@ -16,21 +16,21 @@
     <link href="css/bootstrap-responsive.min.css" rel="stylesheet"> <!-- provides responsive design -->
 
     <!--JQuery for DOM and UnderscoreJS for JS utility functions -->
-    <script src="js/entity/jquery-2.0.2.min.js"></script>
-    <script src="js/entity/underscore-1.4.4.min.js"></script>
+    <script src="js/vendor/jquery-2.0.2.min.js"></script>
+    <script src="js/vendor/underscore-1.4.4.min.js"></script>
 
     <!--Salesforce forceTK for REST api -->
-    <script src="js/entity/forcetk.js"></script> <!-- Core rest api lib -->
-    <script src="js/entity/force.entity.js"></script> <!-- Wrapper for ForceTK and Entity framework -->
+    <script src="js/sdk/forcetk.mobilesdk.js"></script> <!-- Core rest api lib -->
+    <script src="js/sdk/smartsync.js"></script> <!-- Wrapper for ForceTK and Entity framework -->
 
     <!-- Cordova and Salesforce's Cordova interface -->
-    <script src="js/cordova/cordova-2.3.0.js"></script> <!-- Cordova lib that talks to native side of things -->
-    <script src="js/cordova/cordova.force.js"></script> <!-- Salesforce Cordova lib that helps with SmartStore -->
+    <script src="js/vendor/cordova-2.3.0.js"></script> <!-- Cordova lib that talks to native side of things -->
+    <script src="js/sdk/cordova.force.js"></script> <!-- Salesforce Cordova lib that helps with SmartStore -->
 
     <!-- KnockoutJS libs -->
-    <script src="js/knockout/knockout-2.2.1.js"></script> <!-- KnockoutJS -->
-    <script src="js/knockout/sammy-latest.min.js"></script> <!-- Small JS lib to support routing -->
-    <script src="js/knockout/knockout-force.js"></script> <!-- Interface that connects your app w/ Entity framework -->
+    <script src="js/vendor/knockout-2.3.0.js"></script> <!-- KnockoutJS -->
+    <script src="js/vendor/sammy-latest.min.js"></script> <!-- Small JS lib to support routing -->
+    <script src="js/sdk/knockout-force.js"></script> <!-- Interface that connects your app w/ Entity framework -->
 
     <!-- Your app -->
     <script src="js/init.js"></script> <!-- Place where your app is initialized (called from deviceready) -->

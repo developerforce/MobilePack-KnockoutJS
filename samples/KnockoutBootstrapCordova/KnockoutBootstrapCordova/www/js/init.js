@@ -119,18 +119,21 @@ function sammyRoutes(koApp) {
             this.render(absolutePath + '/partials/logout.html').replace('#mainContainer');
         });
 
+
         //Note: bind to 'changed' event and reapply bindings if mainContainer has changed
         //This is required to essentially wait until new view is swapped before applying bindings.
-        this.bind('changed', function() {
+        this.bind('changed', function () {
             if (!koApp.currentViewModel) {
                 return;
             }
-            //var mainContainer = document.getElementById('mainContainer');
-            var mainContainer = document.getElementsByTagName('body')[0];
-            ko.cleanNode(document.getElementById('logoutDiv'));
-            if (mainContainer && mainContainer.childNodes.length > 0) {
+            var mainContainer = document.getElementById('mainContainer');
+            var logoutDiv = document.getElementById('logoutDiv');
 
+            if (mainContainer && mainContainer.childNodes.length > 0) {
+                ko.cleanNode(logoutDiv);
+                ko.cleanNode(mainContainer);
                 ko.applyBindings(koApp.currentViewModel, mainContainer);
+                ko.applyBindings(koApp.currentViewModel, logoutDiv);
             }
         });
     });

@@ -299,7 +299,6 @@ function KnockoutForceObjectFactory(params, sfConfig) {
 
     /*RSC And who doesn't love SOSL*/
     KnockoutForceObject.search = function(searchTerm, successCB, failureCB) {
-
         //Replace __SEARCH_TERM_PLACEHOLDER__ from SOSL with actual search term.
         var s = sosl.replace('__SEARCH_TERM_PLACEHOLDER__', escape(searchTerm));
         return SFConfig.client.search(s, successCB, failureCB);

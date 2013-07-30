@@ -30,7 +30,6 @@ function initApp(options, forcetkClient) {
     }
 }
 
-mockStore.useSessionStorage();
 
 //Uncomment below and set accessToken(= sessionId), instanceUrl and proxyUrl to test smartstore (mock version - coz real smartstore is part of cordova)
 // inside the browser
@@ -120,12 +119,14 @@ function sammyRoutes(koApp) {
             if (!koApp.currentViewModel) {
                 return;
             }
-            //var mainContainer = document.getElementById('mainContainer');
-            var mainContainer = document.getElementsByTagName('body')[0];
-            ko.cleanNode(document.getElementById('logoutDiv'));
-            if (mainContainer && mainContainer.childNodes.length > 0) {
+            var mainContainer = document.getElementById('mainContainer');
+            var logoutDiv = document.getElementById('logoutDiv');
 
+            if (mainContainer && mainContainer.childNodes.length > 0) {
+                ko.cleanNode(logoutDiv);
+                ko.cleanNode(mainContainer);
                 ko.applyBindings(koApp.currentViewModel, mainContainer);
+                ko.applyBindings(koApp.currentViewModel, logoutDiv);
             }
         });
     });
