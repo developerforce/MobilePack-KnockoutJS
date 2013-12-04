@@ -35,3 +35,6 @@ Mobile Pack for KnockoutJS supports the following three deployment options for y
 ## Learn More
 
 For much more information building enterprise mobile applications on Force.com with Mobile Packs, go to the [Mobile Packs home page](https://events.developerforce.com/mobile/services/mobile-packs).
+
+[![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/developerforce/mobilepack-knockoutjs/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
+
